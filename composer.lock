@@ -1,0 +1,312 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "fde2d5f74af22e10a541da497ca6475a",
+    "packages": [
+        {
+            "name": "diversen/console-padding",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diversen/console-padding.git",
+                "reference": "6b6bf84d6f6e41e5b54efd44b05af70ac84f9edf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diversen/console-padding/zipball/6b6bf84d6f6e41e5b54efd44b05af70ac84f9edf",
+                "reference": "6b6bf84d6f6e41e5b54efd44b05af70ac84f9edf",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Diversen\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Iversen",
+                    "email": "dennis.iversen@gmail.com"
+                }
+            ],
+            "description": "Very basic console padding",
+            "homepage": "http://github.com/diversen/console-padding",
+            "keywords": [
+                "console",
+                "padding"
+            ],
+            "support": {
+                "issues": "https://github.com/diversen/console-padding/issues",
+                "source": "https://github.com/diversen/console-padding/tree/v2.0.0"
+            },
+            "time": "2022-06-25T10:47:48+00:00"
+        },
+        {
+            "name": "diversen/minimal-cli-framework",
+            "version": "v7.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diversen/minimal-cli-framework.git",
+                "reference": "ef01c6d43cb31ae085293f57a46dff7c8dcb0ded"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diversen/minimal-cli-framework/zipball/ef01c6d43cb31ae085293f57a46dff7c8dcb0ded",
+                "reference": "ef01c6d43cb31ae085293f57a46dff7c8dcb0ded",
+                "shasum": ""
+            },
+            "require": {
+                "diversen/console-padding": "^2.0",
+                "diversen/parse-argv": "^4.0",
+                "php-parallel-lint/php-console-color": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Diversen\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Iversen",
+                    "email": "dennis.iversen@gmail.com"
+                }
+            ],
+            "description": "A very fast and simple CLI framework",
+            "support": {
+                "issues": "https://github.com/diversen/minimal-cli-framework/issues",
+                "source": "https://github.com/diversen/minimal-cli-framework/tree/v7.0.6"
+            },
+            "time": "2023-03-22T17:54:52+00:00"
+        },
+        {
+            "name": "diversen/parse-argv",
+            "version": "v4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diversen/parse-argv.git",
+                "reference": "8f0339030bc50e655efb3e424a9efaf4af537d5a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diversen/parse-argv/zipball/8f0339030bc50e655efb3e424a9efaf4af537d5a",
+                "reference": "8f0339030bc50e655efb3e424a9efaf4af537d5a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Diversen\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Iversen",
+                    "email": "dennis.iversen@gmail.com",
+                    "homepage": "https://github.com/diversen",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Parse argv and get options and arguments",
+            "homepage": "http://github.com/diversen/parse-argv",
+            "keywords": [
+                "argv",
+                "cli",
+                "console"
+            ],
+            "support": {
+                "issues": "https://github.com/diversen/parse-argv/issues",
+                "source": "https://github.com/diversen/parse-argv/tree/v4.1.0"
+            },
+            "time": "2023-03-22T06:22:03+00:00"
+        },
+        {
+            "name": "diversen/php-cli-spinners",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diversen/php-cli-spinners.git",
+                "reference": "1a300638d389e6c005c39bf8a9b9f01cf0d30dfc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diversen/php-cli-spinners/zipball/1a300638d389e6c005c39bf8a9b9f01cf0d30dfc",
+                "reference": "1a300638d389e6c005c39bf8a9b9f01cf0d30dfc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Diversen\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Iversen",
+                    "email": "dennis.iversen@gmail.com",
+                    "homepage": "https://github.com/diversen",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Show a cli spinner while executing a callback",
+            "homepage": "http://github.com/diversen/php-cli-spinners",
+            "keywords": [
+                "callback",
+                "cli",
+                "spinner"
+            ],
+            "support": {
+                "issues": "https://github.com/diversen/php-cli-spinners/issues",
+                "source": "https://github.com/diversen/php-cli-spinners/tree/v1.0.2"
+            },
+            "time": "2023-03-19T21:07:10+00:00"
+        },
+        {
+            "name": "diversen/shell-gpt-php",
+            "version": "v2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/diversen/shell-gpt-php.git",
+                "reference": "332917580de2408a88b826ecd01a990f1fa8332a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/diversen/shell-gpt-php/zipball/332917580de2408a88b826ecd01a990f1fa8332a",
+                "reference": "332917580de2408a88b826ecd01a990f1fa8332a",
+                "shasum": ""
+            },
+            "require": {
+                "diversen/minimal-cli-framework": "^7.0",
+                "diversen/php-cli-spinners": "^1.0",
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^10.0"
+            },
+            "bin": [
+                "bin/shgpt"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Diversen\\GPT\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dennis Iversen",
+                    "email": "dennis.iversen@gmail.com"
+                }
+            ],
+            "description": "Using shell-gpt-php to generate code, system commands, or chat. Easy to extend. ",
+            "keywords": [
+                "GPT-3",
+                "api",
+                "client",
+                "codex",
+                "language",
+                "natural",
+                "openai",
+                "php",
+                "processing",
+                "sdk",
+                "shell"
+            ],
+            "support": {
+                "issues": "https://github.com/diversen/shell-gpt-php/issues",
+                "source": "https://github.com/diversen/shell-gpt-php/tree/v2.0.5"
+            },
+            "time": "2023-03-29T17:13:47+00:00"
+        },
+        {
+            "name": "php-parallel-lint/php-console-color",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-parallel-lint/PHP-Console-Color.git",
+                "reference": "7adfefd530aa2d7570ba87100a99e2483a543b88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-parallel-lint/PHP-Console-Color/zipball/7adfefd530aa2d7570ba87100a99e2483a543b88",
+                "reference": "7adfefd530aa2d7570ba87100a99e2483a543b88",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "replace": {
+                "jakub-onderka/php-console-color": "*"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-code-style": "^2.0",
+                "php-parallel-lint/php-parallel-lint": "^1.0",
+                "php-parallel-lint/php-var-dump-check": "0.*",
+                "phpunit/phpunit": "^4.8.36 || ^5.7.21 || ^6.0 || ^7.0 || ^8.0 || ^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHP_Parallel_Lint\\PhpConsoleColor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jakub Onderka",
+                    "email": "jakub.onderka@gmail.com"
+                }
+            ],
+            "description": "Simple library for creating colored console ouput.",
+            "support": {
+                "issues": "https://github.com/php-parallel-lint/PHP-Console-Color/issues",
+                "source": "https://github.com/php-parallel-lint/PHP-Console-Color/tree/v1.0.1"
+            },
+            "time": "2021-12-25T06:49:29+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

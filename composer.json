@@ -1,0 +1,20 @@
+{
+    "name": "diversen/gpt-translate",
+    "description": "Translate long texts using GPT",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Diversen\\GPT\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dennis Iversen",
+            "email": "dennis.iversen@gmail.com"
+        }
+    ],
+    "require": {
+        "diversen/shell-gpt-php": "^2.0"
+    }
+}
