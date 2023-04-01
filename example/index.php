@@ -16,11 +16,11 @@ $gpt_translate = new GPTTranslate(
     from_file: "./example/lykke-per-1.md",
     to_file: "./example/a-fortunate-man.md",
     // How creative the output should be. 0.0 is not creative, 1.2 is maybe a bit creative, 2.0 may be pure nonsense
-    temperature: 1.2,
+    temperature: 1.0,
     // How much the model should avoid repeating the same words. 0.0 is no penalty, 1.8 is a quite a bit of penalty
-    presence_penalty: 1.8,
+    presence_penalty: 1.5,
     // What to prepend to the text to translate
-    pre_prompt: "Translate the following from danish to english: "
+    pre_prompt: "Translate the following from danish to english without any meta comments: "
 );
 
 $gpt_translate->translate();

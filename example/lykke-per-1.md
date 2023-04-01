@@ -1,8 +1,6 @@
-## The Project Gutenberg eBook of Lykke-Per. Første Del
+Lykke-Per. Første Del  
 
-**Title**: Lykke-Per. Første Del  
-
-**Author**: Henrik Pontoppidan
+Henrik Pontoppidan
 
 Produced by Thomas Hermansen
 
