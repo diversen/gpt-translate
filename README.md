@@ -1,7 +1,7 @@
 # README
 
 This is minimal howto about translating a long text using GPT using php.
-It translates markdown texts, e.g. a novel, from one language to another. 
+It may translate markdown texts, e.g. a novel, from one language to another. 
 It does the job quite well, but in any case you will need to edit
 the translated document if you want a translation of high quality.
 
@@ -13,17 +13,22 @@ parts based on double lines. And then translate one section at a time.
 ## Usage
 
 This example will make an effort to translate the first the part of the danish novel 
-'Lykke Per' to english. 
+'Lykke Per' (A Fortunate Man) into english. 
 
-You will need to change the api key in [example/index.php](example/index.php) 
-
-    git clone git@github.com:diversen/gpt-translation.git
-    cd gpt-translation
+    git clone git@github.com:diversen/gpt-translate.git
+    cd gpt-translate
+    composer install
 
 You will need to change the api key in [example/index.php](example/index.php) 
 Then run:
 
     php example/index.php
+
+## As library
+
+    composer install diversen/gpt-translate
+
+Usage is the same as in [example/index.php](example/index.php)
 
 ## Related
 

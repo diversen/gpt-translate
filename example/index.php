@@ -14,7 +14,7 @@ $api_key = file_get_contents('/home/dennis/.config/shell-gpt-php/api_key.txt');
 $gpt_translate = new GPTTranslate(
     api_key: $api_key,
     from_file: "./example/lykke-per-1.md",
-    to_file: "./example/lucky-per.md",
+    to_file: "./example/a-fortunate-man.md",
     // How creative the output should be. 0.0 is not creative, 1.2 is maybe a bit creative, 2.0 may be pure nonsense
     temperature: 1.2,
     // How much the model should avoid repeating the same words. 0.0 is no penalty, 1.8 is a quite a bit of penalty
