@@ -1,11 +1,8 @@
 # README
 
 This is minimal howto about translating a long text using GPT using php.
-
 It translates markdown texts, e.g. a novel, from one language to another. 
-
 It does the job quite well, but in any case you will need to edit
-
 the translated document if you want a translation of high quality.
 
 The auto-translation may serve as a good starting point. 
