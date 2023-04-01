@@ -15,6 +15,6 @@
         }
     ],
     "require": {
-        "diversen/shell-gpt-php": "^2.0"
+        "diversen/tiny-gpt-client": "^1.0"
     }
 }
