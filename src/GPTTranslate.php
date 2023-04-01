@@ -10,7 +10,7 @@ use Exception;
 class GPTTranslate
 {
     private ?ArrayObject $paragraphs = null;
-    private string $pre_message = '';
+    private string $pre_prompt = '';
     private ?OpenAiApi $openai_api = null;
     private $total_tokens = 0;
     private $failure_sleep = 60;
@@ -24,13 +24,13 @@ class GPTTranslate
         string $api_key,
         string $from_file,
         string $to_file,
-        string $pre_message,
+        string $pre_prompt,
         int $failure_sleep = 60,
         float $temperature = 1.2,
         float $presence_penalty = 1.8
     ) {
         $this->paragraphs = new ArrayObject();
-        $this->pre_message = $pre_message;
+        $this->pre_prompt = $pre_prompt;
         $this->openai_api = new OpenAiApi($api_key, timeout: 10, stream_sleep: 0.1);
         $this->failure_sleep = $failure_sleep;
         $this->from_file = $from_file;
@@ -44,7 +44,7 @@ class GPTTranslate
     public function getParams($message)
     {
 
-        $message = $this->pre_message . $message;
+        $message = $this->pre_prompt . $message;
         $params = array(
             'model' => 'gpt-3.5-turbo',
             'max_tokens' => 2048,
