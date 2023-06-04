@@ -26,7 +26,7 @@ Then run:
 
 ## As library
 
-    composer install diversen/gpt-translate
+    composer require diversen/gpt-translate
 
 Usage is the same as in [example/index.php](example/index.php)
 
