@@ -19,7 +19,7 @@ This example will make an effort to translate the first the part of the danish n
     cd gpt-translate
     composer install
 
-You will need to change the api key in [examples/example_1/index.php](examples/example_1/example/index.php) 
+You will need to change the api key in [examples/example_1/index.php](examples/example_1/index.php) 
 Then run:
 
     php examples/example_1/index.php
