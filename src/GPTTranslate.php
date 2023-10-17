@@ -17,9 +17,10 @@ class GPTTranslate
     private $from_file = '';
     private $to_file = '';
     private $failure_iterations = 1;
-    private $temperature = 1.2;
-    private $presence_penalty = 1.8;
+    private $temperature = 0.7;
+    private $presence_penalty = 0.1;
     private $top_p = 0.99;
+    private $max_words_paragraph = 1024;
     private $model = 'gpt-4';
 
     public function __construct(
@@ -31,6 +32,7 @@ class GPTTranslate
         float $temperature = 0.7,
         float $presence_penalty = 0.1,
         float $top_p = 0.99,
+        int $max_words_paragraph = 1024,
         string $model = 'gpt-4',
     ) {
         $this->paragraphs = new ArrayObject();
@@ -42,6 +44,7 @@ class GPTTranslate
         $this->temperature = $temperature;
         $this->presence_penalty = $presence_penalty;
         $this->top_p = $top_p;
+        $this->max_words_paragraph = $max_words_paragraph;
         $this->model = $model;
 
         $this->readText($this->from_file);
@@ -89,11 +92,45 @@ class GPTTranslate
         // Split on double line endings
         $paragraphs = preg_split("/\n\s*\n/", $content);
 
-        foreach ($paragraphs as $para) {
+        // Expand length of paragraphs
+        $paragraphs_expanded = $this->expandParagraphs($paragraphs);
+
+        // Trim
+        $paragraphs_trimmed = [];
+        foreach ($paragraphs_expanded as $para) {
             $para = trim($para);
             if (empty($para)) continue;
+            $paragraphs_trimmed[] = $para;
+        }
+
+        foreach ($paragraphs_trimmed as $para) {
             $this->paragraphs[] = $para;
         }
+    }
+
+    /**
+     * Iterate over paragraphs and generate new paragraphs array
+     * When a paragraph is longer > 1024 chars then begin a new paragraph
+     *
+     * @param array $paragrahs
+     * @return array
+     */
+
+    private function expandParagraphs(array $paragrahs)
+    {
+
+        $new_paragraphs = [];
+        $new_paragraph = '';
+
+        foreach ($paragrahs as $paragraph) {
+            $new_paragraph .= $paragraph . PHP_EOL . PHP_EOL;
+            if (strlen($new_paragraph) > $this->max_words_paragraph) {
+                $new_paragraphs[] = $new_paragraph;
+                $new_paragraph = '';
+            }
+        }
+
+        return $new_paragraphs;
     }
 
     public function translate()
@@ -109,7 +146,7 @@ class GPTTranslate
 
             try {
 
-                $result = $this->translateString($para);                
+                $result = $this->translateString($para);
                 if ($result->tokens_used == "0") {
                     throw new Exception("Tokens was 0");
                 }
