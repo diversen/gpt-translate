@@ -35,8 +35,10 @@ $gpt_translate = new GPTTranslate(
 
     // What to prepend to the text to translate
     pre_prompt: "Translate English text to Danish. Be aware of the Danish grammar. The Danish grammer MUST be correct. You may simplify sentence structures if it makes a better translation. You MUST not use any meta-comments. If you make a meta-comment, the prepend it with 'XXX:'. The text you will translate to Danish begins after this colon: ",
+
     // Model
     model: "gpt-4",
+    max_words_paragraph: 1024,
 
 );
 
