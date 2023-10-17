@@ -19,6 +19,7 @@ class GPTTranslate
     private $failure_iterations = 1;
     private $temperature = 1.2;
     private $presence_penalty = 1.8;
+    private $model = 'gpt-4';
 
     public function __construct(
         string $api_key,
@@ -27,7 +28,8 @@ class GPTTranslate
         string $pre_prompt,
         int $failure_sleep = 60,
         float $temperature = 1.2,
-        float $presence_penalty = 1.8
+        float $presence_penalty = 1.8,
+        string $model = 'gpt-4',
     ) {
         $this->paragraphs = new ArrayObject();
         $this->pre_prompt = $pre_prompt;
@@ -37,6 +39,7 @@ class GPTTranslate
         $this->to_file = $to_file;
         $this->temperature = $temperature;
         $this->presence_penalty = $presence_penalty;
+        $this->model = $model;
 
         $this->readText($this->from_file);
     }
@@ -46,8 +49,7 @@ class GPTTranslate
 
         $message = $this->pre_prompt . $message;
         $params = array(
-            'model' => 'gpt-3.5-turbo',
-            'max_tokens' => 2048,
+            'model' => $this->model,
             'temperature' => $this->temperature,
             'presence_penalty' => $this->presence_penalty,
             'n' => 1,

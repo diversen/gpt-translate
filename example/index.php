@@ -20,7 +20,10 @@ $gpt_translate = new GPTTranslate(
     // How much the model should avoid repeating the same words. 0.0 is no penalty, 1.8 is a quite a bit of penalty
     presence_penalty: 1.5,
     // What to prepend to the text to translate
-    pre_prompt: "Translate the following from danish to english without any meta comments: "
+    pre_prompt: "Translate the following Dansih text to modern and readable English. You MUST not use any meta-comments. If you don't understand a word, then try to guess the meaning from the context. Keep any markdown formatting intact when possible. You may get a single line or a complete paragraph or just a few words. Translate it as good as you can. Here is the text to translate: ",
+    // Model
+    model: "gpt-4",
+
 );
 
 $gpt_translate->translate();
