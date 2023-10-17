@@ -19,16 +19,18 @@ This example will make an effort to translate the first the part of the danish n
     cd gpt-translate
     composer install
 
-You will need to change the api key in [example/index.php](example/index.php) 
+You will need to change the api key in [examples/example_1/index.php](examples/example_1/example/index.php) 
 Then run:
 
-    php example/index.php
+    php examples/example_1/index.php
+
+(There is also a couple of other examples).
 
 ## As library
 
     composer require diversen/gpt-translate
 
-Usage is the same as in [example/index.php](example/index.php)
+Usage is the same as in [examples/example_1/index.php](examples/example_1/index.php)
 
 ## Related
 
