@@ -13,12 +13,13 @@ class GPTTranslate
     private string $pre_prompt = '';
     private ?OpenAiApi $openai_api = null;
     private $total_tokens = 0;
-    private $failure_sleep = 60;
+    private $failure_sleep = 30;
     private $from_file = '';
     private $to_file = '';
     private $failure_iterations = 1;
     private $temperature = 1.2;
     private $presence_penalty = 1.8;
+    private $top_p = 0.99;
     private $model = 'gpt-4';
 
     public function __construct(
@@ -26,9 +27,10 @@ class GPTTranslate
         string $from_file,
         string $to_file,
         string $pre_prompt,
-        int $failure_sleep = 60,
-        float $temperature = 1.2,
-        float $presence_penalty = 1.8,
+        int $failure_sleep = 30,
+        float $temperature = 0.7,
+        float $presence_penalty = 0.1,
+        float $top_p = 0.99,
         string $model = 'gpt-4',
     ) {
         $this->paragraphs = new ArrayObject();
@@ -39,6 +41,7 @@ class GPTTranslate
         $this->to_file = $to_file;
         $this->temperature = $temperature;
         $this->presence_penalty = $presence_penalty;
+        $this->top_p = $top_p;
         $this->model = $model;
 
         $this->readText($this->from_file);
@@ -52,6 +55,7 @@ class GPTTranslate
             'model' => $this->model,
             'temperature' => $this->temperature,
             'presence_penalty' => $this->presence_penalty,
+            'top_p' => $this->top_p,
             'n' => 1,
             'stream' => false,
             'messages' =>
@@ -78,7 +82,12 @@ class GPTTranslate
     public function readText(string $filename)
     {
         $content = file_get_contents($filename);
-        $paragraphs = preg_split('#(\r\n?|\n){2,}#', $content);
+
+        // Normalize all line endings to \n
+        $content = str_replace(["\r\n", "\r"], "\n", $content);
+
+        // Split on double line endings
+        $paragraphs = preg_split("/\n\s*\n/", $content);
 
         foreach ($paragraphs as $para) {
             $para = trim($para);
@@ -99,7 +108,8 @@ class GPTTranslate
             $para = $iterator->current();
 
             try {
-                $result = $this->translateString($para);
+
+                $result = $this->translateString($para);                
                 if ($result->tokens_used == "0") {
                     throw new Exception("Tokens was 0");
                 }
